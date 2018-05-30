@@ -1,0 +1,36 @@
+import numpy as np
+import cv2
+import time
+import thread
+
+
+numCaptures = 3
+
+#for i in range(numCaptures):
+#    time.sleep(2)
+#    imgTitle = "img" + str(i)
+#    print imgTitle
+
+
+
+cap = cv2.VideoCapture(0)
+
+    #stream video from camera to window, frame by frame
+    ##no saving, just accessing the camera
+
+while(True):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+    
+    # Our operations on the frame come here
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # Display the resulting frame
+    cv2.imshow('frame',gray)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break #stream frames until 'q' key is pressed
+    
+# When everything done, release the capture
+cap.release()
+cv2.destroyAllWindows()
+    
