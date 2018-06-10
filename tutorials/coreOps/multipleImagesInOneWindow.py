@@ -1,9 +1,8 @@
 import numpy as np
 import cv2
 
-#def imshow_delay(title, img, delay):
-#    cv2.imshow(title, img)
-#    cv2.waitKey(delay)
+#basic 'transition' utilizing cv2.addWeighted()
+
 def transition(img1, img2):
     alpha = 0
     while alpha < 1:
@@ -19,9 +18,7 @@ img2 = cv2.imread("/home/matt/OpenCV/samples/data/HappyFish.jpg")
 img1Shape = img1.shape
 img2Shape = img2.shape
 
-#print "img1: ", img1Shape
-#print "img1: ", img2Shape
-#make both images the same dimensions
+#make both images the same dimensions - sloppy, improved in slideshowExercise.py
 x = min(img1Shape[0], img2Shape[0])
 y = min(img1Shape[1], img2Shape[1])
 resized1 = img1[:x, :y]

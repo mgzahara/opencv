@@ -1,6 +1,9 @@
 import numpy as np
 import cv2
 
+#layer a non-rectangular image over another - one w/o a background
+#each step is illustrated
+
 def imshow(title, img):
     cv2.imshow(title, img)
     cv2.waitKey(0)
@@ -13,7 +16,7 @@ def imshow(title, img):
 img1 = cv2.imread("/home/matt/OpenCV/samples/data/messi5.jpg")
 img2 = cv2.imread("/home/matt/OpenCV/samples/data/smaller_opencv_logo.png")
 
-
+#originals
 imshow("soccer", img1)
 imshow("logo", img2)
 

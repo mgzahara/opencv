@@ -2,6 +2,8 @@ import time
 import numpy as np
 import cv2
 
+#intro to manipulating images
+
 img1 = cv2.imread("/home/matt/OpenCV/samples/data/messi5.jpg")
 img2 = cv2.imread("/home/matt/OpenCV/samples/data/WindowsLogo.jpg")
 logo = cv2.imread("/home/matt/OpenCV/samples/data/opencv-logo.png")
@@ -40,11 +42,3 @@ cv2.imshow("cv2 blended", dst)
 k = cv2.waitKey(0)
 
 cv2.destroyAllWindows()
-
-#slideshow exercise
-#alpha = 0
-#while alpha < 1:
-#    out = cv2.addWeighted(resized1, 1 - alpha, resized2, alpha, 0)
-#    cv2.imshow
-#    alpha += 0.05
-#    time.sleep(0.3)

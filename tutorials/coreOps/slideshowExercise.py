@@ -13,6 +13,7 @@ alpha_inc       = 0.05
 transition_wait = 75
 
 def transition(img1, img2):
+    #fade from img1 to img2
     alpha = 0
     while alpha < 1:
         res = cv2.addWeighted(img1, 1 - alpha, img2, alpha, 0)
@@ -21,6 +22,7 @@ def transition(img1, img2):
         alpha += alpha_inc #inc alpha  
 
 def slideshow(img1path, img2path):
+    #prepare the images for transition
     img1 = cv2.imread(img1path)
     img2 = cv2.imread(img2path)
 
@@ -40,7 +42,7 @@ mypath=sys.argv[1]
 print
 print "mypath: ", mypath
 print
-supported=['pbm',
+supported=['pbm', #acceptable img formats
            'pgm', 
            'ppm', 
            'tiff',
@@ -52,11 +54,11 @@ toDisplay=[]
 
 #courtesy of Arshin on StackOverflow
 files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-print
-print "files:"
-for f in files:
-    print f
-print
+#print
+#print "files:"
+#for f in files:
+#    print f
+#print
 for f in files:
     if imghdr.what(mypath+f) in supported:
         toDisplay.append(f)
